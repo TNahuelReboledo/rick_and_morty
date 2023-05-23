@@ -25,5 +25,3 @@ const validationEmail = (data) => {
 };
 
 export default validationEmail;
-
-// 

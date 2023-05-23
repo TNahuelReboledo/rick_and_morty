@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import style from './Card.module.css';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addFav, removeFav } from "../../redux/actions";
+import { addFav, removeFav } from "../../redux/action";
 
 function Card({ id, name, status, species, gender, origin, image, onClose, myFavorites, addFav, removeFav }) {
 
@@ -24,7 +24,7 @@ function Card({ id, name, status, species, gender, origin, image, onClose, myFav
             setIsFav(true);
          }
       });
-   }, [myFavorites]);
+   }, [myFavorites, id]);
 
    return (
 

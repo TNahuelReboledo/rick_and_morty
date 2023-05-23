@@ -1,9 +1,7 @@
-
 import Card from "../Card/Card";
 import style from "./Cards.module.css"
 
 export default function Cards({ characters, onClose }) {
-
 
    return (
       <div className={style.containerCharacter}>
@@ -11,6 +9,7 @@ export default function Cards({ characters, onClose }) {
          {characters.map(({ id, name, status, species, gender, image }) => {
             return (
                <Card
+               key={id}
                id={id}
                name={name}
                status={status}
