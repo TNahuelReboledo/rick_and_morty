@@ -3,23 +3,23 @@ const validationEmail = (data) => {
   let errors = {};
 
   if (!(/\S+@\S+\.\S+/.test(data.email))){
-    errors.e1 = `El email de usuario tiene que ser un email.`
+    errors.e1 = `It's not an email.`
   }
     
 
   if (!data.email) {
-    errors.e2 = `El email de usuario no puede estar vacío.`
+    errors.e2 = `Email cannot be empty.`
   }
 
   if (data.email.length > 35) {
-    errors.e3 = `El email no puede tener más de 35 caracteres.`
+    errors.e3 = `Cannot be longer than 35 characters.`
   }
 
   if (!(/\d/.test(data.password))) {
-    errors.p1 = 'El password debe contener al menos un numero'
+    errors.p1 = 'Must contain at least one number.'
   }
   if (data.password.length < 6 || data.password.length > 10) {
-    errors.p2 = 'El password debe contener entre 6 y 10 caracteres.'
+    errors.p2 = 'Must be between 6 and 15 characters.'
   }
   return errors;
 };

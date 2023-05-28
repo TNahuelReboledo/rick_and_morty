@@ -2,6 +2,7 @@ import Card from '../Card/Card.jsx';
 import { useDispatch, connect } from "react-redux";
 import { filterCards, orderCards } from '../../redux/action.js';
 import { useState } from "react";
+import style from "./Favorites.module.css"
 
 
 const Favorites = ({ myFavorites }) => {
@@ -21,41 +22,45 @@ const Favorites = ({ myFavorites }) => {
 
 
   return (
-    <div>
+    <div className={style.container}>
+      <div className={style.selector}>
+        <label className={style.label}>order</label>
+        <select onChange={handleOrder}>
+          <option selected disabled>by order</option>
+          <option value="A">Ascendente</option>
+          <option value="D">Descendente</option>
+        </select>
 
-      <label>by order</label>
-      <select onChange={handleOrder}>
-        <option selected disabled>by order</option>
-        <option value="A">Ascendente</option>
-        <option value="D">Descendente</option>
-      </select>
+        <br />
 
-      <label>by gender</label>
-      <select onChange={handleFilter}>
-        <option value="" selected disabled>by gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Genderless">Genderless</option>
-        <option value="unknown">Unknown</option>
-      </select>
+        <label className={style.label}>order</label>
+        <select onChange={handleFilter}>
+          <option value="" selected disabled>by gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </div>
 
-      {myFavorites?.map(({ id, name, status, species, gender, origin, image }) => {
-        return (
-          <Card
-
-            key={id}
-            id={id}
-            name={name}
-            status={status}
-            species={species}
-            gender={gender}
-            origin={origin}
-            image={image}
-          />
+      <div className={style.cardsFav}>
+        {myFavorites?.map(({ id, name, status, species, gender, origin, image }) => {
+          return (
+            <Card
+              key={id}
+              id={id}
+              name={name}
+              status={status}
+              species={species}
+              gender={gender}
+              origin={origin}
+              image={image}
+            />
+          )
+        }
         )
-      }
-      )
-      }
+        }
+      </div>
 
     </div>
   )

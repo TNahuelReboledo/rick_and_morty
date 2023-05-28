@@ -1,0 +1,35 @@
+@keyframes timming_loader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.details_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  color: #ffffff;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+  color: #ffffff60;
+  animation: timming_loader .6s infinite alternate;
+}

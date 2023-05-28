@@ -30,7 +30,7 @@ export default function App() {
   }
 
   const onClose = (id) => {
-    setCharacters(characters.filter((char) => char.id !== Number(id)));
+    setCharacters(characters.filter((char) => char.id !== id));
   };
 
   async function login(userData) {

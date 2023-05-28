@@ -14,7 +14,7 @@ function Card({ id, name, status, species, gender, origin, image, onClose, myFav
          removeFav(id);
       } else {
          setIsFav(true);
-         addFav({ id, name, status, species, gender, origin, image, onClose });
+         addFav({ id, name, status, species, gender, origin, image });
       }
    };
 
@@ -30,23 +30,27 @@ function Card({ id, name, status, species, gender, origin, image, onClose, myFav
 
       <div className={style.container}>
 
-         {
-            isFav ? (
-               <button onClick={handleFavorite}>❤️</button>
-            ) : (
-               <button onClick={handleFavorite}>🤍</button>
-            )
-         }
-
+         <br />
+         <div className={style.divButtons}>
          <button className={style.clear} onClick={() => onClose(id)}>&times;</button>
-         <Link to={`/detail/${id}`}>
+            {
+               isFav ? (
+                  <button onClick={handleFavorite} className={style.favButtonRed}>❤️</button>
+               ) : (
+                  <button onClick={handleFavorite} className={style.favButtonWhite}>🤍</button>
+               )
+            }
+         </div>
+
+
+         <Link to={`/detail/${id}`} className={style.linkName}>
             <h2>{name}</h2>
-         </Link>
          <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
          {/* <h2>{props.origin}</h2> */}
          <img src={image} alt='' />
+         </Link>
       </div>
    );
 };

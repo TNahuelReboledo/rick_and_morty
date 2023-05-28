@@ -30,7 +30,7 @@ const reducer = (state = initialState, action) => {
       };
 
     case ORDER:
-      const allCharactersFavCopy = [...state.allCharacter];
+      const allCharactersFavCopy = [...state.allCharacters];
       return {
         ...state,
         myFavorites:

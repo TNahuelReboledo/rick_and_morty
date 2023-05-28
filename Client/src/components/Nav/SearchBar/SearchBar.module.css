@@ -31,7 +31,7 @@
     border-bottom:solid #ffffff70 1px;
 }
 
-.searchBar button{
+.searchButton{
     background-color: transparent;
     color: #ffffff;
     width: 6rem;
@@ -45,7 +45,7 @@
 
 
 
-.searchBar button:hover{
+.searchButton:hover{
     transition-duration: .3s;
     cursor: pointer;
     border: solid .4px #00000060;
