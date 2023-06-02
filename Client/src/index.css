@@ -15,7 +15,8 @@ body {
   /* background: linear-gradient(#004958,#508c15,#67cc02); */
 
   background-image: url(galaxia-en-el-espacio_2560x1440_xtrafondos.com.jpg);
-  background-size: cover;
+  background-size: contain;
+  background-attachment: fixed;
 }
 
 code {

@@ -44,13 +44,13 @@ function Card({ id, name, status, species, gender, origin, image, onClose, myFav
 
 
          <Link to={`/detail/${id}`} className={style.linkName}>
-            <h2>{name}</h2>
+            <h2 className={style.name}>{name}</h2>
+         </Link>
          <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
-         {/* <h2>{props.origin}</h2> */}
+         {/* <h2>{origin}</h2> */}
          <img src={image} alt='' />
-         </Link>
       </div>
    );
 };
